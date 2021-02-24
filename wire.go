@@ -6,7 +6,12 @@ import (
 	"github.com/google/wire"
 )
 
-func Initialize() application {
-	wire.Build(newApplication, wireSet.ConfigSet, wireSet.DatabaseSet)
-	return application{}
+func Initialize(path string) (Application, error) {
+	wire.Build(
+		newApplication,
+		wireSet.ServiceSet,
+		wireSet.ConfigSet,
+		wireSet.DatabaseSet,
+	)
+	return Application{}, nil
 }

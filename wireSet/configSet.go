@@ -6,8 +6,6 @@ import (
 	"project/config"
 )
 
-var ConfigSet = wire.NewSet(NewConfig)
-
-func NewConfig() *config.Config {
-	return config.InitConfig()
-}
+var ConfigSet = wire.NewSet(
+	config.InitConfig,
+)

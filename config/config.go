@@ -7,7 +7,7 @@ type Config struct {
 
 func InitConfig() *Config {
 	return &Config{
-		Port:    "123",
-		Address: "address",
+		Port:    "80",
+		Address: "127.0.0.1",
 	}
 }
