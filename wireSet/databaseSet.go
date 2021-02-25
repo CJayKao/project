@@ -7,8 +7,8 @@ import (
 	"github.com/google/wire"
 )
 
-var DatabaseSet = wire.NewSet(newDatabaseSet)
+var DatabaseSet = wire.NewSet(NewDatabaseSet)
 
-func newDatabaseSet(config *config.Config) *database.Database {
+func NewDatabaseSet(config config.Config) *database.Database {
 	return database.NewDatabase(config)
 }

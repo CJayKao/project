@@ -1,25 +1,30 @@
 package main
 
-import "project/service"
+import (
+	"project/config"
+	"project/database"
+	// "project/database"
+)
 
 type Application struct {
-	auth *service.AuthSerivce
+	// auth *service.AuthSerivce
+	DB     *database.Database
+	Config config.Config
 }
 
 func newApplication(
-	auth *service.AuthSerivce,
-) *Application {
-	return &Application{
-		auth: auth,
+	// auth *service.AuthSerivce,
+	config config.Config,
+	db *database.Database,
+) Application {
+	return Application{
+		Config: config,
+		DB:     db,
 	}
 }
 
 func (app *Application) Start() {
-	app.Launch()
-}
 
-func (app *Application) Launch() {
-	app.auth.GetAuth()
 }
 
 func main() {

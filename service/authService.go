@@ -6,13 +6,13 @@ import (
 )
 
 type AuthSerivce struct {
-	config config.Config
-	db     database.Database
+	config *config.Config
+	db     *database.Database
 }
 
 func NewAuthSerivce(
-	config config.Config,
-	db database.Database,
+	config *config.Config,
+	db *database.Database,
 ) *AuthSerivce {
 	return &AuthSerivce{
 		config: config,

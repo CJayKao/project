@@ -9,9 +9,9 @@ import (
 func Initialize(path string) (Application, error) {
 	wire.Build(
 		newApplication,
-		wireSet.ServiceSet,
 		wireSet.ConfigSet,
 		wireSet.DatabaseSet,
+		// wireSet.ServiceSet,
 	)
 	return Application{}, nil
 }
